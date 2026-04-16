@@ -52,3 +52,34 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    sizes = [100, 500, 1000, 5000, 10000]
+    linear_times = []
+    binary_times = []
+    import time
+
+    numbers = [4, 8, 15, 16, 23, 42, 55, 78, 91, 120]
+    target = 78
+
+    start = time.perf_counter()
+
+    for number in numbers:
+        if number == target:
+            break
+
+    end = time.perf_counter()
+
+    duration = end - start
+    print(f"Měření trvalo {duration:.8f} s")
+
+    import matplotlib.pyplot as plt
+
+    sizes = [100, 500, 1000, 5000, 10000]
+    times = [0.00001, 0.00003, 0.00006, 0.00031, 0.00067]
+
+    plt.plot(sizes, times)
+
+    plt.xlabel("Velikost vstupu")
+    plt.ylabel("Čas [s]")
+    plt.title("Ukázkový graf měření")
+    plt.show()
