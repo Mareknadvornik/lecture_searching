@@ -57,16 +57,28 @@ import json
 #
 # if __name__ == "__main__":
 #     main
-c=[-51, -12, -3, -3, -1, 2, 8, 13, 14, 14, 14, 21, 22, 23, 24, 25, 48, 63, 64, 70, 72, 78, 90, 102, 120]
-cisla=sorted(c)
-print(cisla)
+# c=[-51, -12, -3, -3, -1, 2, 8, 13, 14, 14, 14, 21, 22, 23, 24, 25, 48, 63, 64, 70, 72, 78, 90, 102, 120]
+# cisla=sorted(c)
+# print(cisla)
 # print(serazene_cisla)
 # prostredni=len(serazene_cisla)//2
 # print(prostredni)
 # for i,numbers in enumerate(serazene_cisla):
 #
-left=0
-right=len(cisla)
-print(right)
-mid=left+right//2
-print(mid)
+
+# mid=left+right//2
+def binary_search(cisla,target):
+    left=0
+    right = len(cisla)-1
+    print(right)
+    while left <=right:
+        mid=left+right//2
+        if cisla[mid]==target:
+            return mid
+        elif cisla[mid]<target:
+            left=mid+1
+        elif cisla[mid]>target:
+            right=mid-1
+    return None
+print(binary_search([-51, -12, -3, -3, -1, 2, 8, 13, 14, 14, 14, 21, 22, 23, 24, 25, 48, 63, 64, 70, 72, 78, 90, 102, 120],-3))
+
