@@ -67,18 +67,50 @@ import json
 #
 
 # mid=left+right//2
-def binary_search(cisla,target):
-    left=0
-    right = len(cisla)-1
-    print(right)
-    while left <=right:
-        mid=left+right//2
-        if cisla[mid]==target:
-            return mid
-        elif cisla[mid]<target:
-            left=mid+1
-        elif cisla[mid]>target:
-            right=mid-1
-    return None
-print(binary_search([-51, -12, -3, -3, -1, 2, 8, 13, 14, 14, 14, 21, 22, 23, 24, 25, 48, 63, 64, 70, 72, 78, 90, 102, 120],-3))
+# def binary_search(cisla,target):
+#     left=0
+#     right = len(cisla)-1
+#     print(right)
+#     while left <=right:
+#         mid=left+right//2
+#         if cisla[mid]==target:
+#             return mid
+#         elif cisla[mid]<target:
+#             left=mid+1
+#         elif cisla[mid]>target:
+#             right=mid-1
+#     return None
+# print(binary_search([-51, -12, -3, -3, -1, 2, 8, 13, 14, 14, 14, 21, 22, 23, 24, 25, 48, 63, 64, 70, 72, 78, 90, 102, 120],-3))
 
+
+def pattern_search(sequence: str, pattern: str) -> set:
+    positions = set()
+    seq_len = len(sequence)
+    pat_len = len(pattern)
+
+    # projdeme všechny možné začátky vzoru
+    for i in range(seq_len - pat_len + 1):
+        if sequence[i:i + pat_len] == pattern:
+            positions.add(i)
+
+    return positions
+
+
+def main():
+    # načtení DNA sekvence ze souboru
+    with open("sequential.json", "r") as f:
+        data = json.load(f)
+        dna_sequence = data["dna_sequence"]
+
+    # definice vzoru
+    pattern = "ATA"
+
+    # vyhledání pozic
+    result =sorted(pattern_search(dna_sequence, pattern))
+
+    print(f"Vzor: {pattern}")
+    print(f"Nalezené pozice: {result}")
+
+
+if __name__ == "__main__":
+    main()

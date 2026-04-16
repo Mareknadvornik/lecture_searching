@@ -83,3 +83,4 @@ if __name__ == "__main__":
     plt.ylabel("Čas [s]")
     plt.title("Ukázkový graf měření")
     plt.show()
+
