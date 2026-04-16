@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
     plt.plot(sizes, times)
 
-    plt.xlabel("Velikost vstupu")
+    plt.xlabel("Velikost vstupu je")
     plt.ylabel("Čas [s]")
     plt.title("Ukázkový graf měření")
     plt.show()
