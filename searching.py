@@ -11,6 +11,9 @@ def read_data(file_name, key):
     else:
         return None
 
+print(read_data("sequential.json","unordered_numbers"))
+# def linear_search()
+
 
 
 
