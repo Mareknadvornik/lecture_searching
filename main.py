@@ -1,4 +1,4 @@
-print("hehehehe")
+print("hehehehekikk")
 def main():
     print("Hello from lecture-searching!")
 
